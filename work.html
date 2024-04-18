@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAZON</title>
+    <link rel="stylesheet" href="one.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="one.js"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 00px;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-nav {
+    height: 60px;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+
+nav {
+    position: fixed;
+    background-color: rgb(106, 105, 105);
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.second-nav {
+    height: 50px;
+    position: fixed;
+    top: 60px;
+    background-color: rgb(30, 28, 28);
+}
+
+.but {
+    width: 100px;
+    height: 50px;
+}
+
+.buttons {
+    border: none;
+    background-color: rgb(30, 28, 28);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s;
+}
+
+.buttons:hover {
+    background-color: rgb(106, 105, 105);
+}
+
+.container {
+    max-width: 1400px;
+}
+
+.left-section {
+    height: 50px;
+}
+
+.hamburger-menu {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ham-burger {
+    height: 40px;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.head-mast {
+    height: 40px;
+    margin-left: 40px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.link1,
+.link2 {
+    transition: text-decoration 0.15s;
+    color: black;
+    font-weight: 550;
+    width: 100px;
+    height: 60px;
+}
+
+.link1 button,
+.link2 button {
+    border: none;
+    background-color: rgb(106, 105, 105);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s;
+}
+
+.link1 button:hover,
+.link2 button:hover {
+    background-color: rgb(30, 28, 28);
+}
+
+.middle-section {
+    height: 50px;
+    margin-top: 0;
+}
+
+.search {
+    width: 600px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+.icon {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0;
+}
+
+.right-section {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe-button {
+    margin: 0 10px;
+    padding: 8px 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.25s, opacity 0.25s, color 0.25s, border 0.25s;
+    transition-timing-function: linear;
+}
+
+.subscribe-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 8px 29px;
+}
+
+.sign-in {
+    padding: 8px 10px;
+    border: none;
+    color: black;
+    background-color: white;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.25s, background-color 0.25s, opacity 0.25s;
+    transition-timing-function: linear;
+}
+
+.sign-in:hover {
+    color: white;
+    background-color: black;
+}
+
+.sign-in:active {
+    opacity: 0.5;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-nav {
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+    }
+
+    .left-section,
+    .middle-section,
+    .right-section {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    .link1,
+    .link2 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .right-section {
+        height: 30px;
+    }
+
+    .subscribe-button,
+    .sign-in {
+        height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .icon {
+        font-size: 25px;
+        align-self: center;
+    }
+
+    .head-mast {
+        width: 100%;
+        align-items: center;
+    }
+    .left-section{
+        margin:0;
+    }
+
+    .middle-section {
+        margin: 0;
+    }
+
+    .right-section {
+        width: 0;
+        padding: 0;
+        height: 0;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .second-nav{
+        display: none;
+        margin:0;
+        height:0;
+        width:0;
+    }
+    .search {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        
+    }
+
+    .subscribe-button,
+    .sign-in {
+        display: none;
+        height:0;
+    }
+
+    .link1,
+    .link2 {
+        width: 100%;
+        margin: 10px 0;
+        display: none;
+    }
+
+
+
+}
+
+.container2 {
+    background: linear-gradient(to bottom, #9446FE, #D57CD3, #F799BA);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 150px;
+}
+
+.sub-container {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    justify-content: space-around;
+}
+
+.gender-button {
+    padding: 8px 0px;
+    border: black 2px solid;
+    width: 90px;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gender-button:hover {
+    opacity: 0.6;
+}
+
+.container3 {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    width:100%;
+}
+
+.sub-container2 {
+    margin: 0;
+}
+
+div h1 {
+    font-weight: 900;
+    font-size: 56px;
+    font-style: italic;
+    margin: 15px;
+    cursor: pointer;
+}
+
+div h2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+div h3 {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+div p {
+    font-size: 12px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.sale {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.container4 {
+    position: absolute;
+    top: 400px;
+    left: 180px;
+    right: 180px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.item {
+    flex: 1;
+    height: 260px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.item img {
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
+}
+
+.name {
+    background-color: white;
+    align-items: center;
+    margin: 0px;
+    margin-top: -5px;
+    width: 173px;
+    padding: 0;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.container5 {
+    position: absolute;
+    top: 675px;
+    left: 680px;
+    right: 680px;
+}
+
+.container5 button {
+    padding: 10px 30px;
+    border: none;
+    color: black;
+    font-weight: 800;
+    font-size: 16px;
+    transition: background-color 0.25s, color 0.25s, opacity 0.25s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+.container5 button:hover {
+    color: white;
+    background-color: black;
+}
+
+.container5 button:active {
+    opacity: 0.7;
+}
+
+.main-container2 {
+    margin-top: 110px;
+    margin-bottom: 30px;
+    height: 600px;
+    background-color: white;
+    position: relative;
+}
+
+.sub-container-one {
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    height: 100%;
+    background-color: rgb(181, 179, 179);
+}
+
+.basics {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 560px;
+    bottom: 0;
+    flex: 1;
+    z-index: 10;
+}
+
+.internal-one h1 {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.internal-two {
+    position: absolute;
+    left: 200px;
+    right: 0;
+}
+
+.basic-img {
+    height: 400px;
+    object-fit: fill;
+    width: 100%;
+}
+
+.basic-img2 {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.basics-two {
+    position: absolute;
+    width: 559px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    flex: 1;
+    z-index: 10;
+    height: 100%;
+}
+
+.my-button {
+    z-index: 30;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 400px;
+    left: 470px;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    cursor: pointer;
+}
+
+.main-container3 {
+    background-color: white;
+    height: 500px;
+    position: relative;
+}
+
+.sub-container-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    right: 100px;
+    height: 465px;
+    background-color: white;
+}
+
+.one,
+.two,
+.three,
+.four {
+    flex: 1;
+    height: 465px;
+    margin: 0 10px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.one img,
+.two img,
+.three img,
+.four img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-container-three {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container6 {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+h4 {
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+h5 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: rgb(106, 105, 105);
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-right: 50px;
+}
+
+.footer-nav h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-nav a {
+    color: white;
+    margin-bottom: 5px;
+    transition: color 0.25s;
+}
+
+.footer-nav a:hover {
+    color: rgb(30, 28, 28);
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.footer-contact h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-contact a {
+    color: white;
+    margin-bottom: 5px;
+    transition: color 0.25s;
+}
+
+.footer-contact a:hover {
+    color: rgb(30, 28, 28);
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-right: 50px;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-info img {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+/* Media Queries */
+
+        @media (max-width: 1440px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .right-section {
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .middle-section .search {
+                width: 90%;
+            }
+
+            .link1,
+            .link2 {
+                width: 100%;
+                margin: 10px 0;
+                display: none;
+            }
+
+            .second-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .icon {
+                font-size: 25px;
+                align-self: center;
+            }
+
+            .head-mast {
+                width: 100%;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .middle-section .search {
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 0px;
+            }
+
+            .subscribe-button,
+            .sign-in {
+                display: none;
+            }
+        }
+
+        /* Additional styles for responsiveness */
+        @media (max-width: 768px) {
+            .container2 {
+                padding: 0 20px;
+            }
+
+            .container4 {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .main-container2,
+            .main-container3,
+            .main-container4 {
+                padding: 0 20px;
+            }
+
+            .main-container2 h1,
+            .main-container3 h2,
+            .main-container4 h3 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Existing HTML content here -->
+
+    <script>
+        // Existing JavaScript functions here
+    </script>
+</body>
+</html>
+
+
+    </style>
+</head>
+<body>
+
+  <nav>
+    <!-- <div class="ham-burger flex">
+      <img src="pics/hamburger-menu.svg" alt="hamburger-menu" class="hamburger-menu">
+     </div> -->
+    <div class="main-nav container flex" >
+      <div class="left-section flex" >
+      
+      <div class="head-mast flex"> 
+       <a href="site.html" class="icon">YAZON</a>
+      </div>
+      <div class="nav-link links flex">
+        <div class="link1">
+          <button>WOMEN</button>
+        </div>
+        <div class="link2">
+          <button>MEN</button> 
+        </div>
+      </div>
+      
+      
+      </div>
+      <div class="middle-section flex">
+        <input type="text" class="search" placeholder="Search for items and brands">
+        <!-- <button class="search-button">Search</button> -->
+      </div>
+      <div class="right-section ">
+
+        <button class="subscribe-button" onclick="openlogin()">Log in</button>
+        <button class="sign-in" onclick="openPopup()">SIGN UP</button>
+      </div>
+      <!-- <div>
+
+      </div> -->
+    </div>
+  </nav>
+  <nav class="flex second-nav">
+    <div class="but">
+     <button class="buttons">
+      Sale
+     </button>
+    </div>
+    <div class="but">
+      <button class="buttons">
+       New in
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons" style="">
+       Clothing
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Trending
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Shoes
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Accessories
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Brand
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Sportswear
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Topman
+      </button>
+     </div>
+     <div class="but">
+      <button class="buttons">
+       Marketplace
+      </button>
+     </div>
+  </nav>
+  <main class="">
+    <div class="container2">
+      <div class="sub-container flex">
+        <div>
+        <button class="gender-button">WOMEN</button>
+        </div>
+        <div>
+        <h3 style="cursor:default;">SALE: NOW UP TO 70% OFF</h3>
+        </div>
+        <div>
+          <button class="gender-button">MEN</button>
+        </div>
+        
+      </div>
+      
+    
+    <div class="container3 ">
+      <div class="sub-container2 flex2">
+       <div>
+        <button class="sale">SALE</button>
+       </div>
+       <div>
+        <H1>NOW UP TO 70 % OFF</H1>
+       </div>
+       <div>
+        <h2>BIGGER DISCOUNT !</h2>
+      </div>
+       <div>
+        <p>Limited time only, selected styles marked down as shown.</p>
+       </div>
+    </div>
+    </div>
+<div class="container4 flex">
+  <div class="item">
+        <img src="pics/one.webp" alt="Image 1">
+        <div class="name">
+          <h3>SHOES & SNEAKERS</h3>
+        </div>
+        
+  </div>
+  <div class="item">
+    <img src="pics/two.webp" alt="Image 2">
+    <div class="name">
+      <h3>TROUSERS</h3>
+    </div>
+  </div>
+  <div class="item">
+    <img src="pics/three.webp" alt="Image 3">
+    <div class="name">
+      <h3>HOODIES & SWEATS<h3>
+    </div>
+  </div>
+  <div class="item">
+    <img src="pics/four.webp" alt="Image 4">
+    <div class="name">
+      <h3>SPORTSWEAR</h3>
+    </div>
+  </div>
+  <div class="item">
+    <img src="pics/five.webp" alt="Image 5">
+    <div class="name">
+      <h3>TEES</h3>
+    </div>
+  </div>
+  <div class="item">
+    <img src="pics/six.jpeg" alt="Image 6">
+    <div class="name">
+      <h3>SMART STUFF</h3>
+    </div>
+  </div>
+      
+    </div>
+    <div class="container5">
+    <button >VIEW ALL</button>
+    </div>
+    </div>
+    <div class="main-container2 ">
+      <div class="sub-container-one">
+        <button class="my-button">Shop Now</button>
+        <div class="basics flex">
+          <div class="internal-one">
+            <h1>BASICS</h1>
+          </div>
+          <div class="internal-two">
+          <img src="pics/basic.jpeg" alt="" class="basic-img">
+          </div>
+        </div>
+        <div class="basics-two">
+         <img src="pics/rocky.jpeg" alt="" class="basic-img2">
+        </div>
+      </div>
+    </div>
+    <div class="main-container3">
+     <div class="sub-container-two">
+      <div class="one">
+        <img src="pics/imgone.avif" alt="">
+        <div class="text">
+          <h3>NEW IN: DENIM</h3><br>
+          <h4>Ft. jeans,jorts and more</h4>
+        </div>
+      </div>
+      <div class="two">
+       <img src="pics/imgtwo.avif" alt="">
+       <div class="text">
+        <h3>BEST DRESSED</h3><br>
+        <h4>Every occasion, covered</h4>
+      </div>
+      </div>
+      <div class="three">
+       <img src="pics/imgthree.webp" alt="">
+       <div class="text">
+        <h3>SNEAKERS</h3><br>
+        <h4>Our summer selects</h4>
+      </div>
+      </div>
+      <div class="four">
+       <img src="pics/imgfour.avif" alt="">
+       <div class="text">
+        <h3>NEW IN: SHIRTS</h3><br>
+        <h4>Button-down upgrades</h4>
+      </div>
+      </div>
+     </div>
+    </div>
+    <div class="main-container4">
+     <div class="sub-container-four">
+      <div class="rectangle-one">
+        <img src="pics/rectone.jpeg" alt="">
+        <div class="">
+         <h3>OFF-DUTY JOGGERS</h3>
+         <h4>Spring Styles</h4>
+         <button>
+         SHOP NOW
+         </button>
+        </div>
+      </div>
+      <div class="rectangle-two">
+        <img src="pics/recttwo.jpeg" alt="">
+        <div>
+         <h3>FUNKY CLOTHING</h3>
+         <h4>Smartish vibes</h4>
+         <button>
+          SHOP NOW
+         </button>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="main-container5">
+      <button class="app">THE YAZON APP</button>
+      <h3>Fave piece sold out?</h3>
+      <h3>Get back-in-stock alerts on the app</h3>
+      <button class="now">DOWNLOAD NOW</button>
+
+    </div>
+  
+    <div class="main-container6">
+    <div class="sub-container-six">  
+
+      <i class="fa-brands fa-facebook fa-2x
+      "></i>
+      
+      <i class="fa-brands fa-instagram fa-2x
+      "></i>
+      <i class="fa-brands fa-linkedin fa-2x
+      "></i>
+      <i class="fa-brands fa-github fa-2x
+      "></i>
+       |
+       <i class="fa-brands fa-paypal fa-2x"></i>
+       <i class="fa-brands fa-cc-visa fa-2x"></i>
+       <i class="fa-brands fa-cc-mastercard fa-2x"></i>
+       
+       <i class="fa-brands fa-google-pay fa-2x"></i>
+
+      
+    </div>
+    </div>
+    <div class="main-container7">
+      <div class="help">
+        <h4>HELP & INFORMATION</h4>
+        <h5>Help</h5>
+        <h5>Track order</h5>
+        <h5>Delivery & returns</h5>
+        <h5>Sitemap</h5>
+      </div>
+      <div class="about">
+       <h4>ABOUT YAZON</h4>
+       <h5>About us</h5>
+       <h5>Careers at YAZON</h5>
+       <h5>Corporate responsibility</h5>
+       <h5>Investors site</h5>
+      </div>
+      <div class="more">
+       <h4>MORE FROM YAZON</h4>
+       <h5>Mobile and YAZON apps</h5>
+       <h5>YAZON marketplace</h5>
+       <h5>Gift vouchers</h5>
+       <h5>Black Friday</h5>
+       <h5>YAZON x Thrift +</h5>
+       <h5>Discover the YAZON Credit Card</h5>
+       <h5>Help Improve the YAZON website</h5>
+      </div>
+      <div class="shopping">
+        <h4>SHOPPING FROM:</h4>
+        <h5>You're in </h5><img src="pics/download.png" alt="">
+        <h4>CHANGE
+        </h4>
+      </div>
+    </div>
+
+    <div class="signup-container" id="signup-card">
+      <div class="close-div">
+        <button class="close" onclick="closePopup()">X</button>
+        </div>
+        <div class="details">
+      <h2>Sign Up for YAZON</h2>
+      
+      <form>
+          <div class="form-group">
+              <label for="Name">Full Name:</label>
+              <input type="text" id="Name" name="Name" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="password"> Set Password:</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" required>
+          </div>
+  
+          <button type="submit" class="up">Sign Up</button>
+      </form>
+  </div> 
+    </div>
+  <div class="login-container" id="login-card">
+    <div class="close-div">
+      <button class="close" onclick="closelogin()">X</button>
+      </div>
+      <div class="details">
+        <h2>Log In to YAZON</h2>
+    
+        <form>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+     
+            <button type="submit" class="up">Log In</button>
+        </form>
+    
+        <div class="options">
+            <p>Or log in using:</p>
+            <div class="social-buttons">
+                <button class="google">Google</button>
+                <button class="apple">Apple</button>
+                <button class="facebook">Facebook</button>
+            </div>
+        </div>
+    </div>
+    
+      </div>
+            
+  <div id="dimmed-overlay" >
+
+  </div>
+
+  </main>
+
+  <script>
+    function openPopup() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("signup-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Check if the popup element exists
+  if (popup && dimmedOverlay) {
+      // Change the display property of popup to block
+      popup.style.display = "block";
+      // Display the dimmed overlay
+      dimmedOverlay.style.display = "block";
+  }
+}
+
+function closePopup() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("signup-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Hide the popup
+  if (popup && dimmedOverlay) {
+      popup.style.display = "none";
+      // Hide the dimmed overlay
+      dimmedOverlay.style.display = "none";
+  }
+}
+function openlogin() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("login-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Check if the popup element exists
+  if (popup && dimmedOverlay) {
+      // Change the display property of popup to block
+      popup.style.display = "block";
+      // Display the dimmed overlay
+      dimmedOverlay.style.display = "block";
+  }
+}
+
+function closelogin() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("login-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Hide the popup
+  if (popup && dimmedOverlay) {
+      popup.style.display = "none";
+      // Hide the dimmed overlay
+      dimmedOverlay.style.display = "none";
+  }
+}
+  </script>
+</body>
+</html>

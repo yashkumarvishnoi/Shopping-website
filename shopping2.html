@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .containers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .product {
+            flex: 0 0 calc(33.33% - 20px);
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            margin-top: 5px;
+            color: #007BFF;
+        }
+        .product button{
+            padding: 15px 25px;
+            margin:0;
+            margin-top:10px;
+            color:black;
+            font-weight: 700;
+            font-size: 20px;
+            background-color: white;
+            border:black 2px solid;
+            transition: color 0.25s,background-color 0.25s,opacity 0.25s;
+            cursor: pointer;
+            }
+        .product button:hover{
+            color:white;
+            background-color: black;
+        }
+        .product button:active{
+            opacity: 0.7;
+        }
+
+        *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.flex2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.main-nav{
+    height: 60px;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+nav{
+    /* box-shadow: 0 0 2px lightcyan; */
+    position: fixed;
+    background-color: rgb(106, 105, 105);
+    top:0;
+    z-index:99;
+    left:0;
+    right:0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.second-nav{
+    height:50px;
+    position:fixed;
+    top:60px;
+    background-color: rgb(30, 28, 28);
+    /* box-shadow: 0 0 2px lightcyan; */
+    
+}
+.but{
+    width:100px;
+    height:50px;
+
+}
+
+.buttons{
+    border: none; /* Remove default button border */
+    background-color: rgb(30, 28, 28); /* Set button color */
+    color: white; /* Set button text color */
+    cursor: pointer; /* Indicate clickable element */
+    width: 100%; /* Make button fill container width */
+    height: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s;
+    /* padding:0 10px; */
+}
+.buttons:hover{
+    background-color: rgb(106, 105, 105);
+ 
+}
+
+.container{
+    max-width: 1400px;
+    
+    /* overflow: hidden; */
+}
+
+.left-section{
+ 
+ height:50px;
+ /* margin-left:80px; */
+ margin-top: 0;
+ justify-content: center;
+ /* flex:1; */
+}
+.hamburger-menu{
+    height:40px;  
+    width:auto;
+    object-fit: contain;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+  }
+ .ham-burger{
+  height: 40px;
+  margin:0;
+  flex-direction: row;
+  justify-content: center;  
+ } 
+  
+  .head-mast{
+      height:40px;
+      margin-left: 40px;
+      
+      flex-direction: row;
+   
+      justify-content: center;
+  }
+
+  
+
+.link1{
+    transition: text-decoration 0.15s;
+    color:black;
+    font-weight:550;
+    width:100px;
+    height:60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link1 button{
+  border: none; /* Remove default button border */
+    background-color:rgb(106, 105, 105); /* Set button color */
+    color: white; /* Set button text color */
+    cursor: pointer; /* Indicate clickable element */
+    width: 100%; /* Make button fill container width */
+    height: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s;
+  
+}
+.link1 button:hover{
+  background-color: rgb(30, 28, 28);
+}
+.link2{
+    transition: text-decoration 0.15s;
+    color:black;
+    font-weight:550;
+    width:100px;
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.link2 button{
+  border:none;
+  background-color: rgb(106, 105, 105);
+  color: white; /* Set button text color */
+    cursor: pointer; /* Indicate clickable element */
+    width: 100%; /* Make button fill container width */
+    height: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s;
+}
+.link2 button:hover{
+  background-color: rgb(30, 28, 28);
+}
+
+
+.middle-section{
+    /* margin-left: 40px; */
+    height:50px;
+    
+    margin-top: 0;
+}
+.search{
+    width: 600px;
+    height:35px;
+    border:none;
+    outline: none;
+    border-radius: 20px;
+    padding-left: 20px;
+
+}
+
+.icon{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size:35px;
+    /* width:65px; */
+    color:white;
+    font-weight: 600;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding:0;
+}
+.right-section{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+    
+ 
+  /* flex:1; */
+}
+
+
+.subscribe-button{
+  margin: 0 10px;
+  padding:8px 30px;
+  border:none;
+  color: white;
+  background-color:black;
+  font-weight:550;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.25s,opacity 0.25s,color 0.25s,border 0.25s;
+  transition-timing-function: linear;
+}
+.subscribe-button:hover{
+  background-color: white;
+  color: black;
+  border:1px solid black;
+  padding: 8px 29px;
+}
+.sign-in{
+   
+    padding:8px 10px;
+    border:none;
+    color: black;
+    background-color:white;
+    font-weight:550;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.25s,background-color 0.25s,opacity 0.25s;
+    transition-timing-function: linear;
+}
+.sign-in:hover{
+    color:white;
+    background-color: black;
+
+}
+.sign-in:active{
+    opacity:0.5;
+}
+.signup-container {
+background-color: #ffffff;
+/* padding: 50px; */
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: 400px;
+max-width: 100%;
+z-index: 40;
+position: fixed;
+top: 120px;
+left: 50%;
+transform: translate(-50%);
+position:fixed;
+
+
+}
+#signup-card{
+display:none;
+}
+.details{
+padding:20px 50px;
+
+}
+
+.open-popup{
+display: visible;
+}
+
+.signup-container h2 {
+text-align: center;
+margin-top:0;
+color: #333333;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+width: 90%;
+padding: 12px;
+margin-bottom: 10px;
+border: 1px solid #e1e1e1;
+border-radius: 5px;
+font-size: 16px;
+color: #555555;
+}
+
+.signup-container .up {
+width: 100%;
+padding:8px 12px;
+background-color: #007BFF;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.signup-container .up:hover {
+background-color: #0056b3;
+}
+
+.signup-container p {
+text-align: center;
+margin-top: 20px;
+font-size: 14px;
+color: #888888;
+}
+
+.signup-container a {
+color: #007BFF;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.signup-container a:hover {
+color: #0056b3;
+}
+#dimmed-overlay{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+z-index: 19; /* Ensure it's above other content */
+display: none; /* Initially hidden */
+}
+.close{
+position: relative;
+max-width: 30px;
+height: 20px;
+top:10px;
+left:370px;
+right:0px;
+color: black;
+background-color:none;
+
+}
+.close-div{
+height:30px;
+}
+.login-container {
+background-color: #ffffff;
+/* padding: 50px; */
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: 400px;
+max-width: 90%;
+z-index: 40;
+position: fixed;
+top: 150px;
+left: 50%;
+transform: translate(-50%);
+/* display: none; */
+
+}
+#login-card{
+display: none;
+}
+
+.login-container h2 {
+text-align: center;
+margin-bottom: 30px;
+color: #333333;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #e1e1e1;
+border-radius: 5px;
+font-size: 16px;
+color: #555555;
+}
+
+.login-container .up {
+width: 100%;
+padding: 14px;
+background-color: #007BFF;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.login-container .up:hover {
+background-color: #0056b3;
+}
+
+.login-container p {
+text-align: center;
+margin-top: 20px;
+font-size: 14px;
+color: #888888;
+}
+
+.login-container a {
+color: #007BFF;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+color: #0056b3;
+}
+.form-group {
+margin-bottom: 15px;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+color: #555555;
+}
+
+.options {
+margin-top: 20px;
+text-align: center;
+}
+
+.social-buttons {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+
+.google, .apple, .facebook {
+padding: 10px 15px;
+border-radius: 4px;
+border: 1px solid #cccccc;
+cursor: pointer;
+}
+
+.google:hover, .apple:hover, .facebook:hover {
+background-color: #e0e0e0;
+}
+@media (max-width: 1440px) {
+  .container {
+      padding: 0 20px;
+  }
+  .middle-section{
+    width: 610px;
+  }
+  .right-section{
+    justify-content: none;
+  }
+}
+@media (max-width:1190px) {
+    .head-mast{
+    margin:0px;
+
+  }
+  .search{
+    width: 90%;
+  }
+  .middle-section{
+    width: 500px;
+  }
+  .right-section{
+    justify-content: center;
+    align-items: center;
+  }
+  .subscribe-button{
+    padding:8px 25px;
+    margin: 0px 7px;
+  }
+  .sign-in{
+    padding: 8px 10px;
+    margin:0;
+
+  }
+}
+/* For iPads/Tablets */
+@media (max-width: 1024px) {
+    .middle-section{
+    width:400px;  
+   }
+  .search {
+      width: 90%;
+  }
+
+  .right-section{
+      height:30px;
+  }
+  .subscribe-button,.sign-in{
+      height:30px;
+      font-weight: 400;
+      font-size: 11px;
+  }
+  .head-mast{
+  margin:0;
+  margin-left: 0;
+}
+}
+ 
+@media (max-width: 894px) {
+    .but{
+    display: flex;
+    
+
+  }
+  .buttons{
+    font-size: 10px;
+    font-weight: 300;
+  }
+  .head-mast{
+      width: 100%;
+      align-items: center;
+      margin: 0;
+  }
+  .left-section{
+    margin:0;
+  }
+  .middle-section{
+      margin:0;
+      width:300px;
+  }
+  .right-section{
+    
+  }
+  .search {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .link1, .link2 {
+      width: 100%;
+      margin: 10px 0;
+      height: 0;
+      display: none;
+  }
+ 
+}
+/* For Smartphones */
+@media (max-width: 684px){
+    .right-section{
+    height: 0;
+    width: 0;
+    display: none;
+  }
+  .subscribe-button,.sign-in{
+    height:0;
+    display: 0;
+    width:0;
+
+  }
+}
+        /* Media Query for Tablet */
+        @media (max-width: 1024px) {
+            .product {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+            .product {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- <div class="ham-burger flex">
+          <img src="pics/hamburger-menu.svg" alt="hamburger-menu" class="hamburger-menu">
+         </div> -->
+        <div class="main-nav container flex" >
+          <div class="left-section flex" >
+          
+          <div class="head-mast flex"> 
+           <a href="site.html" class="icon">YAZON</a>
+          </div>
+          <div class="nav-link links flex">
+            <div class="link1">
+              <button id="site2">WOMEN</button>
+            </div>
+            <div class="link2">
+              <button id="site1">MEN</button> 
+            </div>
+          </div>
+          
+          
+          </div>
+          <div class="middle-section flex">
+            <input type="text" class="search" placeholder="Search for items and brands">
+            <!-- <button class="search-button">Search</button> -->
+          </div>
+          <div class="right-section ">
+    
+            <button class="subscribe-button" onclick="openlogin()">Log in</button>
+            <button class="sign-in" onclick="openPopup()">SIGN UP</button>
+          </div>
+          <!-- <div>
+    
+          </div> -->
+        </div>
+      </nav>
+      <nav class="flex second-nav">
+        <div class="but">
+         <button class="buttons">
+          Sale
+         </button>
+        </div>
+        <div class="but">
+          <button class="buttons">
+           New in
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons" style="">
+           Clothing
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Trending
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Shoes
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Accessories
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Brand
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Sportswear
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Topman
+          </button>
+         </div>
+         <div class="but">
+          <button class="buttons">
+           Marketplace
+          </button>
+         </div>
+      </nav>
+    
+<div class="containers">
+    <!-- Product 1 -->
+    <div class="product">
+        <img src="pics/11.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$100</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+        <img src="pics/22.webp" alt="Product 2">
+        <div class="product-name">Product 2</div>
+        <div class="product-price">$200</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+        <img src="pics/33.webp" alt="Product 3">
+        <div class="product-name">Product 3</div>
+        <div class="product-price">$150</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/44.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$120</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/55.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$130</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/66.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$145</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/77.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$165</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/88.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$176</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/99.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$123</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/1010.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$111</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/111.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$180</div>
+        <div><button>Buy</button></div>
+    </div>
+
+    <div class="product">
+        <img src="pics/121.webp" alt="Product 1">
+        <div class="product-name">Product 1</div>
+        <div class="product-price">$190</div>
+        <div><button>Buy</button></div>
+    </div>
+    <!-- Add more products as needed -->
+</div>
+<div class="signup-container" id="signup-card">
+    <div class="close-div">
+      <button class="close" onclick="closePopup()">X</button>
+      </div>
+      <div class="details">
+    <h2>Sign Up for YAZON</h2>
+    
+    <form>
+        <div class="form-group">
+            <label for="Name">Full Name:</label>
+            <input type="text" id="Name" name="Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password"> Set Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <button type="submit" class="up">Sign Up</button>
+    </form>
+</div> 
+  </div>
+<div class="login-container" id="login-card">
+  <div class="close-div">
+    <button class="close" onclick="closelogin()">X</button>
+    </div>
+    <div class="details">
+      <h2>Log In to YAZON</h2>
+  
+      <form>
+          <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+   
+          <button type="submit" class="up">Log In</button>
+      </form>
+  
+      <div class="options">
+          <p>Or log in using:</p>
+          <div class="social-buttons">
+              <button class="google">Google</button>
+              <button class="apple">Apple</button>
+              <button class="facebook">Facebook</button>
+          </div>
+      </div>
+  </div>
+  
+    </div>
+          
+<div id="dimmed-overlay" >
+
+</div>
+
+<script>
+    function openPopup() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("signup-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Check if the popup element exists
+  if (popup && dimmedOverlay) {
+      // Change the display property of popup to block
+      popup.style.display = "block";
+      // Display the dimmed overlay
+      dimmedOverlay.style.display = "block";
+  }
+}
+
+function closePopup() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("signup-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Hide the popup
+  if (popup && dimmedOverlay) {
+      popup.style.display = "none";
+      // Hide the dimmed overlay
+      dimmedOverlay.style.display = "none";
+  }
+}
+function openlogin() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("login-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Check if the popup element exists
+  if (popup && dimmedOverlay) {
+      // Change the display property of popup to block
+      popup.style.display = "block";
+      // Display the dimmed overlay
+      dimmedOverlay.style.display = "block";
+  }
+}
+
+function closelogin() {
+  // Fetch the signup-container element by its ID
+  var popup = document.getElementById("login-card");
+  // Fetch the dimmed overlay element
+  var dimmedOverlay = document.getElementById("dimmed-overlay");
+
+  // Hide the popup
+  if (popup && dimmedOverlay) {
+      popup.style.display = "none";
+      // Hide the dimmed overlay
+      dimmedOverlay.style.display = "none";
+  }
+}
+    document.addEventListener("DOMContentLoaded", function() {
+    const site1Button = document.getElementById("site1");
+    const site2Button = document.getElementById("site2");
+
+    site1Button.addEventListener("click", function() {
+        // Navigate to site1.html
+        window.location.href = "site.html";
+    });
+
+    site2Button.addEventListener("click", function() {
+        // Navigate to site2.html
+        window.location.href = "site2.html";
+    });
+});
+</script>
+</body>
+</html>
