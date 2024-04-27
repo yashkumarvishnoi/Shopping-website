@@ -750,6 +750,7 @@ div p{
   left: 50%;
   transform: translate(-50%);
   position:fixed;
+  /* background-color: purple; */
 
   
 }
@@ -787,6 +788,7 @@ display:none;
   width: 100%;
   padding:8px 12px;
   background-color: #007BFF;
+  background-color: purple;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -885,6 +887,7 @@ display:none;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: purple;
 }
 
 .login-container .up:hover {
@@ -1430,4 +1433,28 @@ label {
   
   }
   
+}
+/* Anchor links target styles */
+.skills-section,
+.experience-section {
+  scroll-margin-top: 80px; /* Adjust as needed depending on navbar height */
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
 }
